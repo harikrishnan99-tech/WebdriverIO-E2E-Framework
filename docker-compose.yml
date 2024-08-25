@@ -1,0 +1,10 @@
+version: '3'
+services:
+  web-testing:
+    build: .
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - API_BASE_URL=http://api.example.com
+    command: npm test
